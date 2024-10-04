@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Индивидуальные расписания</title>
+</head>
+<body>
+    <h1>Индивидуальные расписания</h1>
+
+    <h2>Новое расписание</h2>
+    <form method="POST" action="{% url 'create_schedule' %}">
+        {% csrf_token %}
+        {{ schedule_form.as_p }}
+        <button type="submit">Создать расписание</button>
+    </form>
+
+    <h2>Введите Пароль расписания для просмотра и редактирования ранее созданного расписания</h2>
+    <form method="POST" action="{% url 'open_schedule' %}">
+        {% csrf_token %}
+        {{ password_form.as_p }}
+        <button type="submit">Открыть расписание</button>
+    </form>
+</body>
+</html>

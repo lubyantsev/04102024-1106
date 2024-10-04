@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать расписание</title>
+</head>
+<body>
+    <h1>Создать расписание</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ schedule_form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
